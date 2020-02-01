@@ -17,5 +17,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('<str:first_name>/<str:surname>/<str:patronymic>/<str:email>', views.create, name='create')
+    path('<str:first_name>/<str:surname>/<str:patronymic>/<str:email>', views.create, name='create'),
+    path('<str:slug>', views.commit)
 ]
