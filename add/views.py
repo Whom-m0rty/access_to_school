@@ -18,7 +18,7 @@ def create(request, first_name, surname, patronymic, email):
                                                           slug, email, timezone.now(), 'False'))
     conn.commit()
     conn.close()
-    return HttpResponse("OK")
+    return HttpResponse(slug)
 
 
 def commit(request, slug):
