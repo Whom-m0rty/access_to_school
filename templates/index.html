@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Students
+{% endblock %}
+
+{% block content %}
+
+<h1 class="offset-2 col-12 mt-5 mb-5">Ученики:</h1>
+{% for student in students %}
+<div class="container card mb-5">
+<div class="card-header">
+  {{student.first_name}} {{student.surname}} {{student.patronymic}}
+</div>
+<div class="card-body mb-1">
+  <h5 class="card-title">{{ student.email}}</h5>
+  <p class="card-text">{{student.slug}}</p>
+  <a href="/view/{{ student.slug }}" class="btn btn-dark">Посмотреть детально</a>
+</div>
+</div>
+{% endfor %}
+
+{% endblock %}

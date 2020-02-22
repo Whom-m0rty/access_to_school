@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Детально
+{% endblock %}
+
+{% block content %}
+
+<div class="container col-9 offset-md-2">
+  <div class="row mt-5">
+    <h4 class="mt-2"> Имя: {{ student.first_name }}</h4>
+  </div>
+  <div class="row">
+    <h4 class="mt-2"> Фамилия: {{ student.surname }}</h4>
+  </div>
+  <div class="row">
+    <h4 class="mt-2"> Отчество: {{ student.patronymic }}</h4>
+  </div>
+    <div class="row">
+    <h4 class="mt-2"> E-mail: {{ student.email }}</h4>
+  </div>
+    <div class="row">
+    <h4 class="mt-2"> Нахождение в школе: {{ student.in_school }}</h4>
+  </div>
+    <div class="row">
+    <h4 class="mt-2"> Последнее использование: {{ student.last_use }}</h4>
+  </div>
+    <div class="row mt-5">
+    <h4 class="mt-2"> Дата создания: {{ student.created_date }}</h4>
+  </div>
+    <div class="row">
+    <h4 class="mt-2"> Уникальный код: {{ student.slug }}</h4>
+  </div>
+</div>
+
+{% endblock %}

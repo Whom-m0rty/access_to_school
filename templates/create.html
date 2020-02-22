@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Создание ученика
+{% endblock %}
+
+{% block content %}
+
+<form action="{% url 'create' %}" method="post" class="mt-5 container">
+    {% csrf_token %}
+  	<div class="form-group">
+    <label for="exampleInputEmail1">Имя</label>
+    {{ form.first_name }}
+    <small class="form-text text-muted">Укажите Имя ученика</small>
+  	</div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Фамилия</label>
+    {{ form.surname }}
+    <small class="form-text text-muted">Укажите Фамилию ученика</small>
+  	</div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Отчество</label>
+    {{ form.patronymic }}
+    <small class="form-text text-muted">Укажите Отчество ученика</small>
+  	</div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    {{ form.email }}
+    <small class="form-text text-muted">Укажите электронную почту ученика</small>
+  	</div>
+    <button type="submit" class="btn btn-dark mt-3">Подтвердить</button>
+</form>
+
+{% endblock %}

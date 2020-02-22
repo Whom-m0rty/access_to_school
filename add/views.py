@@ -35,3 +35,4 @@ def commit(request, slug):
     conn.commit()
     conn.close()
     return HttpResponse("OK")
+

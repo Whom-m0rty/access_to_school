@@ -14,8 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from .views import PostView
+from .views import *
+from . import views
+
 
 urlpatterns = [
-    path('<str:slug>/', PostView.as_view())
+    path('api/<str:slug>/', PostView.as_view()),
+    path('view/<str:slug>/', views.view),
+    path('api/create/<str:first_name>/<str:surname>/<str:patronymic>/<str:email>/', views.api_create, name='create_api'),
+    path('api/commit/<str:slug>/', views.api_commit),
+    path('', views.index),
+    path('missing/', views.missing, name='missing'),
+    path('create/', Create.as_view(), name='create')
 ]
