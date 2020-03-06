@@ -1,6 +1,8 @@
 from django import forms
 from .models import Post
 from django.core.exceptions import ValidationError
+# import RPi.GPIO as GPIO
+# from mfrc522 import SimpleMFRC522
 
 
 class StudentForm(forms.ModelForm):
@@ -15,12 +17,14 @@ class StudentForm(forms.ModelForm):
         }
 
     def save(self):
-        self.slug ='1231111111231111'
+        id = '1231111111231111'
+        # r = SimpleMFRC522()
+        # id, data = r.read()
         new_student = Post.objects.create(
             first_name=self.cleaned_data['first_name'],
             surname=self.cleaned_data['surname'],
             patronymic=self.cleaned_data['patronymic'],
             email=self.cleaned_data['email'],
-            slug=self.slug
+            slug=id
         )
         return new_student
