@@ -7,7 +7,7 @@ r = SimpleMFRC522()
 try:
     id, slug = r.read()
     print(slug)
-    url = 'http://0:8000/add/{}'.format(str(slug.replace(' ','')))
+    url = 'http://0:8000/api/commit/{}'.format(id)
     print(url)
     req = requests.get(url)
     print(req.text)
